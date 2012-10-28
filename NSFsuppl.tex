@@ -1,0 +1,148 @@
+%%%%%%%%% 
+
+% An abstract of your dissertation research (limited to one page);
+
+% Plans for data management and sharing of the products of research. Proposals 
+% must include a supplementary document of no more than two pages labeled “Data 
+% Management Plan”. This supplement should describe how the proposal will conform 
+% to NSF policy on the dissemination and sharing of research results (see AAG 
+% Chapter VI.D.4), and may include: the types of data, samples, physical collections, 
+% software, curriculum materials, and other materials to be produced in the course of the 
+% project; the standards to be used for data and metadata format and content (where existing 
+% standards are absent or deemed inadequate, this should be documented along with any 
+% proposed solutions or remedies); policies for access and sharing including provisions for 
+% appropriate protection of privacy, confidentiality, security, intellectual property, or other rights 
+% or requirements; policies and provisions for re-use, re-distribution, and the production of 
+% derivatives; and plans for archiving data, samples, and other research products, and for 
+% preservation of access to them. Data management requirements and plans specific to the Directorate, 
+% Office, Division, Program, or other NSF unit, relevant to a proposal are available at: 
+% http://www.nsf.gov/bfa/dias/policy/dmp.jsp. If guidance specific to the program is not available, 
+% then the requirements established in this section apply.
+%
+% Simultaneously submitted collaborative proposals and proposals that include subawards are a 
+% single unified project and should include only one supplemental combined Data Management Plan, 
+% regardless of the number of non-lead collaborative proposals or subawards included. Fastlane will 
+% not permit submission of a proposal that is missing a Data Management Plan. Proposals for 
+% supplementary support to an existing award are not required to include a Data Management Plan.
+%
+% A valid Data Management Plan may include only the statement that no detailed plan is needed, 
+% as long as the statement is accompanied by a clear justification. Proposers who feel that the plan 
+% cannot fit within the supplement limit of two pages may use part of the 15-page Project Description f
+% or additional data management information. Proposers are advised that the Data Management 
+% Plan may not be used to circumvent the 15-page Project Description limitation. The 
+% Data Management Plan will be reviewed as an integral part of the proposal, coming under 
+% Intellectual Merit or Broader Impacts or both, as appropriate for the scientific community of relevance.
+
+\required{Dissertation Abstract}
+
+\subsection*{Using Molecular Sequence Data to Unravel the Relationships between Bacteria 
+and their Environment}
+
+Microbial communities are recognized as major drivers of global biogeochemical processes.  However, 
+the genetic diversity and composition, as well as processes leading to the origin and diversification of these 
+communities in space and time, are poorly understood.  Characterization of microbial communities using 
+high-throughput sequencing of 16S tags shows that OTU abundances can be approximated by a gamma distribution, 
+which suggests structuring around small numbers of highly abundant OTUs and a large proportion of low abundant, 
+rare, OTUs.  The current methods used to characterize how communities are structured rely on multivariate statistics, 
+which operate on pair-wise distance matrices.  My analyses demonstrate that use of these methods, by reducing a 
+highly-dimensional dataset (tens of samples, thousands of OTUs), result in a significant loss of information 
+\citep{Friedline:2012fm}. I demonstrate that, in some cases, up to 80\% of the most abundant OTUs may be removed while 
+still recovering the same community relationships; this indicates these metrics are biased toward the highly abundant OTUs.  I 
+will demonstrate that the observed patterns of OTU abundance detected from microbial communities can be properly 
+modeled using techniques similar to those we used to model the presence and absence of genes in genome 
+evolution \citep{Lake:2004cy, Rivera:2004ct}.  Using simulation studies, I demonstrate that general Markov models 
+in a Bayesian inference framework outperform traditional, multivariate ecological methods in recovering true community 
+structure.  Applying this new methodology to Atlantic Ocean microbial communities allowed us to uncover a distance-decay 
+effect, which was not revealed by the traditional methods \citep{Friedline:2012fm}.  Although the ocean dataset operated on a 
+much larger, continental scale, characterization of the sequence data generated from the a nutrient poor soil on Hog Island, 
+a barrier island off the Virginia Coast, allows for a better characterization of the processes affecting these communities 
+on a much smaller scale.  Finally, using 16S data from the Vaginal Human 
+Microbiome Project, generated here at VCU under the umbrella of the overall NIH HMP initiative, I show that 
+quality filtering has a profound effect on the reliability of downstream analysis.  In conclusion, 
+my analyses of the metagenomic sequence data from three types of bacterial communities demonstrate that the proper 
+identification of the biological process influencing these communities requires the development and implementation of 
+new statistical and computational methodology that takes advantage of the extensive amount of information generated by 
+high-throughput sequencing. 
+
+\newpage
+
+\required{Data Management Plan}
+
+The PI is committed to fostering an open and transparent process of data generation, 
+analysis, and publication. As required in the NSF PGRP guidelines, genome level sequence data will be made 
+available as soon as data quality and integrity have been verified via simple FTP sites hosted by sponsor Eckert. 
+In addition, we will deposit data and computer code in standard public repositories prior to, and in all cases 
+regardless of, publication (e.g., GenBank, Dryad, TreeGenes).
+
+\subsection*{Data Types}
+
+\paragraph{Genetic}
+Genetic sequence data from Illumina and 454 platforms will be stored as compressed FASTA/FASTQ files 
+on disk. The quality-filtered, working set of sequence data will be stored in a relational database management system 
+(RDBMS) built on PostgreSQL following an existing Rivera lab data storage model currently in production 
+for the Vaginal Human Microbiome Project. Reads will be tracked through a barcoding system relating 
+sequence data uniquely with individuals, populations, and additional metadata, as appropriate (e.g., sampling 
+location, SNP genotypes, annotation, etc.).  A copy of the processed, quality-controlled data will be extracted 
+automatically on a schedule and compressed for distribution via FTP.  Additionally, a web interface will be provided for 
+dynamic data exploration.
+
+\paragraph{Spatial and phenotypic}
+All metadata will be stored in the same relational database system.  This includes latitude and longitude for all sampling
+locations as well as phenotypic measurements and observations (e.g., percent serotiny, diameter a breast height (DBH), 
+height).
+
+\subsection*{Data Standards}
+
+All data, including data generated in downstream analysis, will be made available in a plain-text format.  Working sequence
+data will be stored as text in the RDBMS, as well as associated environmental and phenotypic data.  These data will be 
+made available in two ways.  First, as downloadable, compressed files available via FTP.  Second, as dynamically generated
+tables available from a web interface.  Downloadable data will be in tab-delimited format, with informative headers 
+as appropriate.  This format was chosen as it conforms to a standard used in programs such as R, as well as to any 
+current or new custom Java and Python code developed in this project.
+
+\subsection*{Policies for Access and Sharing and Provisions for Appropriate Protection/Privacy}
+Genomic data will be released following the Bermuda/Ft.\ Lauderdale agreement and will also be deposited in 
+GenBank once data quality is sufficient for release. The remaining data will be released after publication in the 
+text and web formats as described above, along with a copy of the publication, and will be posted on web servers in both
+the Eckert and Rivera laboratories. All relevant code and schemas used to process, store, and analyze these data will 
+be made available under and open source license and distributed via the web (e.g., bitbucket.org).  There will be no 
+charge for these data. There are no known privacy or ethical issues associated with the data collected on this grant. 
+There are no known copyright, licensing, or other intellectual property issues associated with these data.
+
+\subsection*{Policies and Provisions for Re-use and Re-distribution}
+The data will not contain any permission restrictions beyond citation of our original publication(s) where the data 
+were introduced. The genetic data will be of potential interest to the landscape genomic community (both 
+professional and academic) for subsequent meta analysis, statistical model development, and other summary 
+uses. The PI does not foresee any reason to restrict the re-use of these data to any entity or group.
+
+\subsection*{Plans for Archiving and Preservation of Access}
+Raw DNA template will be stored at VCU in the Eckert Laboratory in 1.5ml Eppendorf tubes at -80 \celsius\ for least as 
+long as it takes to publish all the materials associated with this project. Individual primers will not be made available, 
+though published sequences can be used to create them de novo if necessary. Textual genetic data will be made 
+available, via the web or some other publicly available medium as described above, for as long as the PI is 
+engaged in academic research. Unprocessed leaf tissue samples will be similarly archived until publication, with 
+raw physiological data (e.g. in the case of parameters derived from light-response curves) archived and available 
+to the public following publication. For the foreseeable future, these data will be housed on the servers located within 
+the Eckert Laboratory. All final data will be automatically backed up to VCU common spaces. There are no known 
+issues associated with storing textual genetic data or anonymizing the identification numbers on these data sets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
