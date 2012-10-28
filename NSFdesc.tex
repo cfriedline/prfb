@@ -231,7 +231,35 @@ maintenance of trans-species
 polymorphisms across the four focal species. 
 
 
-\subsubsection*{Question 3:}
+\subsubsection*{Question 3: Are reconstructed allele frequencies at shared SNPs that are associated with bark thickness 
+correlated more so with reconstructed bark thickness than randomly selected shared SNPs that are unassociated with bark 
+thickness across the phylogeny for these four species?}
+
+\paragraph{Null hypothesis} $H_0$: Correlations between reconstructed allele frequencies at shared SNPs associated with 
+bark thickness and reconstructed values of bark thickness are no larger than those for reconstructed allele frequencies at 
+randomly chosen SNPs unassociated with bark thickness.
+
+\paragraph{Methods} Phylogenies and associated data matrices for genus \emph{Pinus} will be obtained from 
+TreeBASE and GenBank. Most data matrices are constructed primarily from cpDNA coding sequences 
+(e.g. Eckert and Hall 2006; Gernandt et al. 2008) and cpDNA genome sequences (e.g. Parks et al., 2008). 
+Chronograms will be obtained using the fossil calibration points from Willyard et al. (2008). 
+{Chris: insert some language about how the final tree will be constructed [supertree, supermatrix] 
+or are we just using the one from He et al. 2012?} Once a set of plausible chronograms has been 
+generated, bark thickness and allele frequencies within lineages will be reconstructed as quantitative 
+characters using a Bayesian method (i.e. BayesTraits, see Pagel 1997, 1999). 
+Specifically, we will utilize a set of plausible chronograms (n =  10,000) to account for uncertainty in 
+phylogenetic tree and the character states in combination with phylogenetically informed multiple 
+regression analyses (available in BayesTraits as BayesContinuous) to test the association with 
+reconstructed SNP allele frequencies and bark thickness for two types of SNPs: those shared across 
+all four species and associated with bark thickness versus those shared across all four species and 
+unassociated with bark thickness. Allele frequencies and bark thickness will be specified for each species 
+as averages and variances across populations.
+
+\paragraph{Expected outcomes and relevance} $H_0$ will be rejected when the multiple regression model for the 
+SNPs associated with bark thickness better predicts bark thickness than those for SNPs unassociated with bark thickness. 
+This suggests that the correlation structure of allele frequencies with bark thickness differs between the candidates and controls 
+as defined by answering questions 1 and 2. Since controls are matched in number and levels of heterozygosity with the candidates, 
+this would suggest non-neutral processes driving this difference.
 
 \subsubsection*{Question 4: To what extent is natural selection maintaining the fire-associated, thick bark phenotype in these focal species?}
 
