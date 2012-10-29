@@ -1,6 +1,9 @@
 
 
 %%%%%%%%% BIOGRAPHICAL SKETCH -- 2 pages
+
+
+
 \newenvironment{packed_item}{
 \begin{itemize}
  %\setlength{\itemsep}{2pt}
@@ -31,12 +34,16 @@
 % Total number of graduate students advised: X (all time)
 % Total number of postdoctoral scholars sponsored: Y (all time)
 
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
 \section{Professional preparation}
 \begin{center}
 	\begin{tabularx}{\textwidth}{lllr}
-	Virginia Commonwealth University & Integrative Life Sciences & Ph.D. & 5/2013\\
+	Gettysburg College & Biology & B.A. & 1999\\
 	Virginia Commonwealth University & Bioinformatics & P.S.M. & 2008 \\
-	Gettysburg College & Biology & B.A. & 1999\\ 
+	Virginia Commonwealth University & Integrative Life Sciences & Ph.D. & 2013\\
+	 
 	\end{tabularx}
 \end{center}
 	
@@ -69,13 +76,7 @@
 
 \section{Publications}
 
-\begin{packed_item}
-	\item{\textbf{Friedline, C. J.} \& Rivera, M. C. Bayesian Inference: a more powerful approach to recovering the 
-	true microbial community structure. In preparation (2012).}
-	
-	\item{Gilbreath, J. J., Semino-Mora, C., \textbf{Friedline, C. J.}, et al. A Core Microbiome Associated 
-	with the Peritoneal Tumors of Pseudomyxoma Peritonei. In preparation (2012).}
-	
+\begin{packed_item}	
 	\item{\textbf{Friedline, C. J.}, Franklin, R. B., McCallister, S. L. \& Rivera, M. C. Bacterial assemblages of the 
 	eastern Atlantic Ocean reveal both vertical and latitudinal biogeographic signatures. 
 	Biogeosciences 9, 2177-–2193 (2012).}
@@ -93,7 +94,7 @@
 	\item{Invited to participate in two 2011 MBL courses: Workshop on Molecular Evolution and Strategies 
 	and Techniques for Analyzing Microbial Population Structures}
 	\item{Designed and implemented informatic pipeline and data acquisition system for the VCU Vaginal Human Microbiome 
-	Project, currently supporting 1,962 samples of 53 million 454 sequencing reads (23 billion base pairs).  Data 
+	Project, currently supporting \num{1962} samples of 53 million 454 sequencing reads (23 billion base pairs).  Data 
 	are housed in a PostgreSQL database and made available via a Java-based web portal.}
 	\item{Developed quality control metrics and the genomes of three antibiotic resistant \textit{S. aureus} strains using Illumina reads. 
 	Comparative genomic analyses identified several SNPs associated with the resistant phenotype.}
@@ -121,6 +122,10 @@
 	\item{Paul M. Fawcett, P.S.M. Advisor,  Center for the Study of Biological Complexity/Department of Internal 
 	Medicine, Virginia Commonwealth University}	
 \end{packed_item}
+
+
+\renewcommand{\thesection}{\Arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\Arabic{subsection}}
 
 
 
