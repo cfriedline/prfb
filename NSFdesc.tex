@@ -36,13 +36,13 @@
 \end{wrapfigure}
 
 
-Fire has been crucial influence in global ecosystem processes and on forested ecosystems, driving not only locally 
+Fire has a been crucial influence in global ecosystem processes and on forested ecosystems, driving not only locally 
 adapted phenotypes in plant populations \citep{Lamont:1991js,Vega:2008vk,Midgley:2011dw,Keeley:2011jw,
 He:2012bz,Parchman:2012ca}, but also impacting carbon storage and climate \citep{Bowman:2009kp}.  
 Understanding the underlying genetic architecture 
-associated with fire-associated traits is therefore critical to dealing with environmental impacts of increased carbon inputs and 
-changing climate.  \citet{He:2012bz} recently investigated five fire-adapted traits for 101 species of \emph{Pinus} and found evidence 
-for a strong influence of fire in the Cretaceous on trait evolution.  However, they considered only presence or absence of the traits in 
+associated with fire-associated traits is therefore critical to dealing with the environmental impacts of increased carbon inputs and 
+changing climate.  \citet{He:2012bz} recently investigated five fire-adapted traits for 101 species of \emph{Pinus} and found evidence, 
+from the Cretaceous, for a strong influence of fire on trait evolution.  However, they considered only presence or absence of the traits in 
 their study.  \textbf{There have been no studies to date which capture, as in this proposal, the quantitative nature of fire-associated trait 
 evolution in these species.} 
 
@@ -60,9 +60,9 @@ pine (\emph{Pinus elliottii}), pond pine (\emph{P.\ serotina}), loblolly pine (\
 (\emph{P.\ palustris}).  \textbf{Using next-generation, high-throughput sequencing, the PI will dissect bark thickness as a complex 
 adaptive, quantitative trait across populations of these four closely related species with the goal of uncovering shared genetic 
 architecture at multiple evolutionary times scales.}  These findings have direct economic impact.  For example, \citet{Marshall:2006wl} 
-demonstrated the negative impact, in terms of financial loss, that bark has on the forest industry.  Being able to estimate accurate 
-bark thickness from a model (see Phase 1), therefore holds tremendous economic potential.  In addition, knowing the genes affecting bark 
-thickness can help inform breeding plans to breed to desired bark thickness to minimize loss.
+demonstrated the negative impact, in terms of financial loss, that bark has on the forest industry.  Linking model-based 
+estimates of bark thickness with markers linked to the causative polymorphisms underlying variation for this trait can help to 
+inform breeding plans to minimize loss.
 
 The application of next-generation sequencing technology to conifer genomes, as proposed in this study, holds the promise of 
 being able to provide a way to dissect the genetic architecture of an adaptive trait.  Until recently, techniques 
@@ -103,7 +103,7 @@ and (3) statistical analysis and hypothesis testing.  A projected timeline for t
 
 \paragraph{Field sampling}
 
-The PI will sample four species in their natural ranges, with 25 individuals from 20 natural populations for each 
+The PI will sample four species in their natural ranges, with 25 individuals from 20 natural populations of each 
 species (Figure \ref{f:range}).  The locations of each population will be determined randomly.  Within each population, a representative 
 of the focal species will be chosen and all other members will be chosen to be at least \SI{50}{m} from the first sampling 
 location to avoid sampling close relatives.  Only trees with diameter at breast height (\SI{1.25}{m} above ground; DBH) of at least 
@@ -118,12 +118,13 @@ Hagl\"{o}ff\textsuperscript{\textregistered} bark gauge, and height of the tree 
 will also be used to obtain the best possible regression model for future studies in these species, using the 
 regression equation from \citet{Cao:1986th}; including these covariates has been shown to significantly decrease estimation
 bias by up to \SI{43}{\percent} in some species \citep{Li:2010bl}.  At the end of sampling, \num{2000} individual tubes of 
-needles (20--25 needles/tube) will be banked along with bark thickness measurements and estimates for all trees for all species.
+needles (20--25 needles/tube) will be banked along with GPS coordinates and measurements of bark thickness and height 
+for all trees for all species.
 
 \paragraph{DNA extraction}
-Genomic DNA will be extracted from leaf tissue Qiagen DNEasy extraction kits in a 96-well format using an existing tissue preparation
-protocol in the Eckert lab located at VCU.  A single DNA extraction from multiple needles per individual will be performed for each sampled 
-tree.
+Genomic DNA will be extracted from leaf tissue using Qiagen DNEasy extraction kits in a 96-well format using an existing 
+tissue preparation protocol in the Eckert lab located at VCU.  A single DNA extraction from multiple needles per individual 
+will be performed for each sampled tree.
 
 \paragraph{Criteria for completion}
 Phase 1 will be designated complete when genomic DNA has been extracted for all \num{2000} individuals.  
@@ -144,7 +145,7 @@ absorbed by the Eckert lab.
 
 The Nucleic Acids Research Facility (NARF) at VCU is currently producing paired-end reads of 150 bases.  Using software that the 
 PI has already written \citep{code:2008wq} coupled with existing libraries (e.g., BioPython \citep{Cock:2009hj}, NGS QC Toolkit 
-\citep{Patel:2012fq}), the processed sequencing data computationally divided into individuals and will be purged of 
+\citep{Patel:2012fq}), the processed sequencing data will be computationally divided into individuals and purged of 
 low-quality reads. Additionally, reads that meet acceptance criteria globally, but possess bases (most often at the 3' end) 
 that have low quality scores, will be trimmed and retained.
 
@@ -166,8 +167,8 @@ complex, and should be complete in early summer 2015.
 
 \subsection*{Phase 3: Perform statistical analysis and hypothesis testing}
 
-This phase will focus on uncovering genetic architecture of bark thickness, summarized as four main questions.  Results 
-from each hypothesis will feed into downstream questions, in a linear fashion.
+This phase will focus on uncovering genetic architecture of bark thickness, summarized as four main questions.  Each question will 
+be answered by testing a null hypothesis, the rejection of which leads to the subsequent question.
 
 \subsubsection*{Question 1: What is the genetic architecture of bark thickness for the four focal pine species that 
 are adapted to fire?}
@@ -256,7 +257,7 @@ with bark thickness.
 
 \paragraph{Methods} As the sequence resource, including annotations, for the loblolly pine genome continue to improve, 
 establishing the genomic context of bark thickness-associated SNPs will enable the PI to test for evidence of selection in 
-polymorphic, protein coding genes.  From the results stemming from Questions ${H_0}^2$ and ${H_0}^3$, the PI will select 
+polymorphic, protein coding genes.  From the results stemming from testing ${H_0}^2$ and ${H_0}^3$, the PI will select 
 10 up to 20 SNPs from subsets of candidate and control loci from each population for each species exhibiting similar attributes 
 (e.g., average heterozygosity).   Using genomic position of SNPs and the loblolly genome annotations, the PI will design 
 PCR primers to amplify the protein coding regions from each subsample ($n = 40 \text{trees}$), and each amplicon will be 
@@ -277,7 +278,7 @@ natural populations.  It is expected that $d_N/d_S$ should be higher for candida
 % It should be similar, but not identical, to the Broader Impacts statement
 % in the project summary
 This project will benefit both the local and global scientific communities, as well as help train 
-the next generation of multi-discipline scientists in the world of big data.  First, as soon as the data is curated, it will be made 
+the next generation of multi-discipline scientists in the world of big data, as follows.  First, as soon as the data is curated, it will be made 
 available for download and exploration from FTP and web sites hosted here at VCU.  Second, the PI will develop and teach a new 
 three-credit course, BIOL 591 Applied Ecological Genomics, which will train advanced undergraduates and 
 graduate students, using the data generated in this project, in skills necessary to both understand the 
