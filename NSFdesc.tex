@@ -52,20 +52,17 @@ sizes \citep{Neale:2004hi}; this is partly why association genetic studies have 
 \citep{Eckert:2012cw,Eckert:2010hd, Wegrzyn:2010dd,Eckert:2009hh,GonzalezMartinez:2007gy,GonzalezMartinez:2006ij,Gupta:2005fx}.
 
 The PI will investigate the genetic architecture of a complex phenotype in 2000 trees from four, economically-important 
-species of pines with a range along the eastern and south-eastern United States (25 trees from 20 populations for each species), 
-an area with evidence of evolutionary impact of fire \textcolor{red}{CITATIONS?}
-Bark thickness is a highly heritable trait for forest trees and pines in general (e.g,  $H^2 \sim 0.65$ for \emph{P. taeda}) 
-\citep{Pederick1970}.  The PI will study bark thickness, as a quantitative, fire-adapted phenotypic trait, in populations of slash 
+species of pines with a range along the eastern and south-eastern United States (25 trees from 20 populations for each species).
+Bark thickness is highly heritable trait for forest trees (e.g., $H^2 = 0.65$ for \emph{P. taeda}; \citet{Pederick1970}), and, as shown by 
+\citet{He:2012bz}, is involved with adaptation to fire by species of \emph{Pinus}, including the four focal species.
+The PI will study bark thickness, as a quantitative, fire-adapted phenotypic trait, in populations of slash 
 pine (\emph{Pinus elliottii}), pond pine (\emph{P.\ serotina}), loblolly pine (\emph{P.\ taeda}), and long leaf pine 
 (\emph{P.\ palustris}).  \textbf{Using next-generation, high-throughput sequencing, the PI will dissect bark thickness as a complex 
 adaptive, quantitative trait across populations of these four closely related species with the goal of uncovering shared genetic 
 architecture at multiple evolutionary times scales.}  These findings have direct economic impact.  For example, \citet{Marshall:2006wl} 
 demonstrated the negative impact, in terms of financial loss, that bark has on the forest industry.  Being able to estimate accurate 
-bark thickness from a model (see Phase 1), therefore holds tremendous economic potential.  \citet{Paine:2011cu} have shown that 
-bark thickness, among other phenotypic traits, can directly impact ecological niche differentiation and evironmental filtering, both of 
-which, if understood more at the genetic level (i.e., segregating variation), could have a wide range of economic impacts, not only on 
-wood harvesting, but breeding programs, as well.  In other words, knowing the genes affecting bark thickness can help inform breeding 
-plans to breed to desired bark thickness to minimize loss.
+bark thickness from a model (see Phase 1), therefore holds tremendous economic potential.  In addition, knowing the genes affecting bark 
+thickness can help inform breeding plans to breed to desired bark thickness to minimize loss.
 
 The application of next-generation sequencing technology to conifer genomes, as proposed in this study, holds the promise of 
 being able to provide a way to dissect the genetic architecture of an adaptive, and quantitative trait.  Until recently, techniques 
@@ -129,9 +126,9 @@ protocol in the Eckert lab located at VCU.  A single DNA extraction from multipl
 individual genomic DNA extracts.  
 
 \paragraph{Criteria for completion}
-Phase 1 will be designated complete when genomic DNA has been extracted for all \num{2000} individuals.  DNA quantitation data as well 
-as sample metadata will be stored in a relational database management system (RDBMS) that will also house sequencing and 
-genotyping data from phase 2.  It is estimated that phase 1 will be complete by June 2014.
+Phase 1 will be designated complete when genomic DNA has been extracted for all \num{2000} individuals.  
+DNA quantitation data as well as sample metadata will be stored in a relational database management system (RDBMS) 
+that will also house sequencing and genotyping data from phase 2.  It is estimated that phase 1 will be complete by June 2014.
 
 \subsection*{Phase 2: Perform sequencing of 2000 individuals and bioinformatic analysis}
 
@@ -142,29 +139,24 @@ Illumina HiSeq 2000 platform.  Genomic enrichment will be performed using the ap
 barcode \citep{Roche454MID}.  
 Briefly, the genomic DNA from an individual is digested with two different restriction enzymes coupled with Illumina-specific 
 adaptor ligation.  The product is amplified by PCR and size selected on an agarose gel, which produces a pool of fragments for 
-sequencing.  Sequencing will produceindividual FASTQ files, one for each lane in the flow cell containing reads for each multiplexed 
-sample in that lane, for each flow cell that is used.  Estimates for sequencing include approximately 100 individuals per lane on an 
-eight-lane flow cell, with a per-lane yield of 200 million reads in a paired-end reaction.  For 2000 trees, the amount of sequence data 
-will approach 8 TB (terabases).  All costs for sequencing will be absorbed by the Eckert lab.   
+sequencing.  For 2000 trees, the amount of sequence data will approach 8 TB (terabases).  All costs for sequencing will be 
+absorbed by the Eckert lab.   
 
 The Nucleic Acids Research Facility (NARF) at VCU is currently producing paired-end reads of 150 bases.  Using software that the 
 PI has already written \citep{code:2008wq} coupled with existing libraries (e.g., BioPython \citep{Cock:2009hj}, NGS QC Toolkit 
 \citep{Patel:2012fq}), the processed sequencing data computationally divided into individuals and will be purged of 
 low-quality reads. Additionally, reads that meet acceptance criteria globally, but possess bases (most often at the 3' end) 
-that have low quality scores, will be trimmed and retained.  The processed sequence data will be stored in both compressed 
-FASTA data for distribution via FTP as well as in a relational database to enable both sample tracking and metadata association.
+that have low quality scores, will be trimmed and retained.
 
 Once quality-controlled reads are obtained for each individual (and each population), they will be aligned (mapped) to the 
-most current draft genome of \emph{P. taeda}, available from Dendrome (\url{dendrome.ucdavis.edu}), using the Burroughs-Wheeler aligner 
-(BWA) \citep{Li:2009fi}, and SNPs will be called.  Because loblolly pine is in both our experimental sample as well as the source 
-of the reference genome, we have a unique opportunity to get a measure of confidence in the read mapping algorithms such as 
-BWA as well as in the overall sequencing quality of our data.  A SNP is called at particular alignment positions if there are enough 
-high quality reads to indicate a difference between the sample and the reference genome given a model of error. Sequence data 
-from NGS technology requires the use of new SNP calling algorithms that properly model all the sources of errors (e.g, base 
-calling errors, mapping errors, and sample preparation errors, particularly PCR errors can have a significant impact on the analysis).
-Several tools have been developed to perform this task such as as SAMtools \citep{Li:2009ka}, GATK \citep{McKenna:2010bv}, and, 
-more recently, GeMS \citep{You:2012iy}.   The result of this phase will be a sample ($n = 2000$) by SNP matrix ($n = \text{thousands}$) for each 
-species ($n = 4$).  
+most current draft genome of \emph{P. taeda}, available from Dendrome (\url{dendrome.ucdavis.edu}), using the 
+Burroughs-Wheeler aligner (BWA) \citep{Li:2009fi}, and SNPs will be called.  A SNP is called at particular alignment positions 
+if there are enough high quality reads to indicate a difference between the sample and the reference genome given a model of error. 
+Sequence data from NGS technology requires the use of new SNP calling algorithms that properly model all the sources of errors 
+(e.g, base calling errors, mapping errors, and sample preparation errors, particularly PCR errors can have a significant impact on the 
+analysis). Several tools have been developed to perform this task such as as SAMtools \citep{Li:2009ka}, GATK \citep{McKenna:2010bv}, 
+and, more recently, GeMS \citep{You:2012iy}.   The result of this phase will be a sample ($n = 2000$) by SNP 
+matrix ($n = \text{thousands}$) for each species ($n = 4$).  
 
 \paragraph{Criteria for completion} Phase 2 will be complete when all libraries have been sequenced and processed.  Processing 
 will include demultiplexing of reads according to individual, quality control processing of the reads, and storage both on disk and 
@@ -180,7 +172,7 @@ from each hypothesis will feed into downstream questions, in a linear fashion.
 \subsubsection*{Question 1: What is the genetic architecture of bark thickness for the four focal pine species that 
 are adapted to fire?}
 
-\paragraph{Null hypothesis} $H_0$: There is no association between genotypic variation at surveyed SNPs and bark thickness 
+\paragraph{Null hypothesis} ${H_0}^1$: There is no association between genotypic variation at surveyed SNPs and bark thickness 
 in any of the four species.
 
 \paragraph{Methods} The PI will employ standard linear models that correct for kinship and population structure that are 
@@ -189,39 +181,33 @@ used for dissecting the genetic basis of phenotypes for conifers \citep{Neale:20
 In addition, the PI will explore the use of the Bayesian models presented by \citet{Parchman:2012ca}, which 
 was the first GWAS for a conifer, and regression tree approaches presented by \citet{Holliday:2012fz}. 
 Linear models will be used to explicitly test the effects of genotypic class of each discovered SNP on quantitative 
-measures of bark thickness for each species. Thus, the number of tests for genotypic effects for each species will 
-be equal to the number of discovered SNPs, which is expected to be in the range of \num{50000} to \num{100000}. 
-\citep{Parchman:2012ca}.  Multiple tests will be accounted for using a minimum \emph{P}-value approach 
+measures of bark thickness for each species.  Multiple tests will be accounted for using a minimum \emph{P}-value approach 
 \citep{Conneely:2007ga}.
 
 \paragraph{Expected outcomes and relevance} The null hypothesis will be rejected when at least one SNP in each 
-of the four pine species is significantly associated to quantitative variation in bark thickness. Previous association 
-studies in conifers typically identify five to 20 or more SNPs associated with the trait under consideration 
-\citep{Eckert:2012cw}. These results will classify SNPs discovered into each species into two classes: those 
-associated to bark thickness (which rejects the null hypothesis for this question) and those unassociated with 
+of the four pine species is significantly associated to quantitative variation in bark thickness. These results will classify 
+SNPs discovered into each species into two classes: those associated to bark thickness 
+(which rejects the null hypothesis for this question) and those unassociated with 
 bark thickness. The latter will be used as controls for questions two through four. The former establishes the 
 genetic architecture of bark thickness for each focal species, and will be referred to as candidates.
 
-\subsubsection*{Question 2: Is the identified genetic architecture (e.g. the set of SNPs for each species) from Question 1 
-shared across the four focal species, and if so, is it shared to a greater extent than random variation within the 
-genomes of these four closely related species?}
+\subsubsection*{Question 2: Are candidate SNPs shared across the four focal species, and if so, are they shared to a 
+greater degree than randomly sampled SNPs from the controls?}
 
-\paragraph{Null hypotheses}  ${H_{0}}^1$: There is no shared genetic architecture for bark thickness among 
-the four focal species. ${H_{0}}^2$: The degree of allele sharing is greater for loci associated to 
-bark thickness than randomly selected loci.
+\paragraph{Null hypotheses}  ${H_0}^2$: There is no shared genetic architecture for bark thickness among 
+the four focal species. ${H_0}^3$: The degree of allele sharing is higher for candidate SNPs than randomly 
+selected control SNPs.
 
-\paragraph{Methods} To evaluate ${H_{0}}^1$, the PI will leverage the underlying, queryable data storage infrastructure 
-to produce the intersection of SNPs associated with bark thickness in all four focal species.  From phase 2, confidence in SNP 
-calls can be quantified because the genome of the reference organism is represented in the set of focal species.  
-To evaluate ${H_{0}}^2$, the union of all SNPs associated with bark thickness 
-will be created. The fraction of this list that is shared across all four species will be used as a test statistic, the magnitude 
-of which will be tested via a simple permutation analysis. The PI will construct a null distribution for the fraction of alleles 
-shared across all four species for sets of SNPs randomly selected from those unassociated to bark thickness. 
+\paragraph{Methods} To evaluate ${H_0}^2$, the PI will leverage the underlying, queryable data storage infrastructure 
+to produce the intersection of SNPs associated with bark thickness in all four focal species (${H_0}^1$). To 
+evaluate ${H_{0}}^3$, the union of all SNPs associated with bark thickness will be created. The fraction of this list 
+that is shared across all four species will be used as a test statistic, the magnitude of which will be tested via a simple 
+permutation analysis. The PI will construct a null distribution for the fraction of alleles shared across all four species 
+for sets of SNPs randomly selected from those unassociated to bark thickness. 
 
 Allele sharing across species is common among conifer species and has been attributed largely to incomplete lineage 
 sorting resulting from recent divergence times and large effective population sizes \citep{Syring:2007gd,Willyard:2009ez}, 
-ancient admixture \citep{Liston:2007cx} and 
-long-term gene flow \citep{Zhou:2010hk}. For example, an analysis of 
+ancient admixture \citep{Liston:2007cx}, and long-term gene flow \citep{Zhou:2010hk}. For example, an analysis of 
 levels of long-term gene flow between loblolly and slash pines using multiple random sets of 50 nuclear genes and an 
 isolation-with-migration model \citep{Becquet:2007js} detected low but significant levels of gene flow over the divergence history 
 of these species (unpublished data, $4 N_{e}m = 2.5$ with a \SI{95}{\percent} confidence interval of 0.52--5.14). The sets of loci 
@@ -230,19 +216,18 @@ enrichment of allele sharing at loci associated to a trait such as bark thicknes
 \citep{He:2012bz} would imply additional processes such as natural selection, as in \cite{Segurel:vf}, in promoting allele 
 sharing among species.
 
-\paragraph{Expected outcomes and relevance} ${H_{0}}^1$ will be rejected when multiple SNPs associated 
+\paragraph{Expected outcomes and relevance} ${H_0}^2$ will be rejected when multiple SNPs associated 
 with bark thickness are shared across species. The relevance of this result would be to establish the shared genetic 
-architecture of an adaptive trait. ${H_{0}}^2$ will be rejected when the fraction of SNPs associated to bark thickness that are 
-shared across the four focal species lies in the upper \SI{1}{\percent} tail (i.e., $\alpha = 0.01$ for a one-tailed test) 
-of the null distribution based upon random sets of unassociated SNPs. The relevance of this result would be to 
-establish that a process beyond incomplete lineage sorting, admixture and gene flow is contributing to the 
-maintenance of shared alleles across the four focal species. 
+architecture of an adaptive trait. ${H_0}^3$ will be rejected when the fraction of SNPs associated to bark thickness that are 
+shared across the four focal species lies in the upper \SI{1}{\percent} tail of the null distribution based upon random sets of 
+unassociated SNPs. A significant result would support the existence of a process beyond incomplete lineage sorting, 
+admixture, and gene flow that is contributing to the maintenance of shared alleles across the four focal species. 
 
 \subsubsection*{Question 3: Are reconstructed allele frequencies at shared SNPs that are associated with bark thickness 
 correlated more so with reconstructed bark thickness than randomly selected shared SNPs that are unassociated with bark 
 thickness across the phylogeny for these four species?}
 
-\paragraph{Null hypothesis} $H_0$: Correlations between reconstructed allele frequencies at shared SNPs associated with 
+\paragraph{Null hypothesis} ${H_0}^4$: Correlations between reconstructed allele frequencies at shared SNPs associated with 
 bark thickness and reconstructed values of bark thickness are no larger than those for reconstructed allele frequencies at 
 randomly chosen SNPs unassociated with bark thickness.
 
@@ -256,35 +241,33 @@ characters using a Bayesian method \citep{Pagel:2004ic}.
 Specifically, we will utilize a set of plausible chronograms ($n =  \num{10000}$) to account for uncertainty in 
 phylogenetic tree and the character states in combination with phylogenetically informed multiple 
 regression analyses, available in BayesTraits as BayesContinuous \citep{Pagel:2004ic},  to test the association with 
-reconstructed SNP allele frequencies and bark thickness for two types of SNPs: those shared across 
-all four species and associated with bark thickness versus those shared across all four species and 
-unassociated with bark thickness. Allele frequencies and bark thickness will be specified for each species 
-as averages and variances across populations.
+reconstructed SNP allele frequencies and bark thickness for shared candidate and shared control SNPs. 
+Allele frequencies and bark thickness will be specified for each species as averages and variances across populations.
 
-\paragraph{Expected outcomes and relevance} $H_0$ will be rejected when the multiple regression model for the 
+\paragraph{Expected outcomes and relevance} ${H_0}^4$ will be rejected when the multiple regression model for the 
 SNPs associated with bark thickness better predicts bark thickness than those for SNPs unassociated with bark thickness. 
 This suggests that the correlation structure of allele frequencies with bark thickness differs between the candidates and controls 
 as defined by answering questions 1 and 2. Since controls are matched in number and levels of heterozygosity with the candidates, 
 this would suggest non-neutral processes driving this difference.
 
-\subsubsection*{Question 4: To what extent is natural selection maintaining the fire-adapted bark thickness in these focal species?}
+\subsubsection*{Question 4: To what extent is natural selection affecting rates of molecular evolution at candidate genes?}
 
-\paragraph{Null hypothesis} $H_0$: There is no evidence of selection in genes containing SNPs that are significantly associated 
+\paragraph{Null hypothesis} ${H_0}^5$: There is no evidence of selection in genes containing SNPs that are significantly associated 
 with bark thickness.
 
 \paragraph{Methods} As the loblolly pine genome continue to improve, establishing the genomic context of 
 bark thickness-associated SNPs will enable the PI to test for evidence of selection in polymorphic, protein coding genes.  
-The PI will select 10 up to 20 SNPs from subsets of candidate and control loci from each population for each species 
-exhibiting similar attributes (e.g., average heterozygosity).   Using genomic position of SNPs and the loblolly genome 
-annotations, the PI will design PCR primers to amplify the protein coding regions from each tree, and each amplicon will 
-be sent for Sanger sequencing.  Once the sequences have been obtained and translated to amino acids, they will be 
-aligned at the amino acid level using standard tools such as MAFFT \citep{Katoh:2005ia} or MUSCLE \citep{Edgar:2004ic}.  
-From the alignment (back-translated to DNA), $d_N/d_S$ will be estimated using established maximum likelihood methods 
-\citep{Yang:2007ki}.
+From the results stemming from Questions ${H_0}^2$ and ${H_0}^3$, the PI will select 10 up to 20 SNPs from subsets of 
+candidate and control loci from each population for each species exhibiting similar attributes (e.g., average heterozygosity).   
+Using genomic position of SNPs and the loblolly genome annotations, the PI will design PCR primers to amplify the protein 
+coding regions from each tree, and each amplicon will be sent for Sanger sequencing.  Once the sequences have been 
+obtained and translated to amino acids, they will be aligned at the amino acid level using standard tools such as MAFFT 
+\citep{Katoh:2005ia} or MUSCLE \citep{Edgar:2004ic}.  From the alignment (back-translated to DNA), $d_N/d_S$ will be 
+estimated, per locus and per site per locus, using established maximum likelihood methods \citep{Yang:2007ki}.
 
 \paragraph{Expected outcome and relevance}  Knowing whether or not genes containing SNPs are under positive ($d_N/d_S > 1$) or 
 purifying selection ($d_N/d_S < 1$) addresses a fundamental question surrounding maintenance of these polymorphisms in 
-natural populations.
+natural populations.  It is expected that $d_N/d_S$ should be higher for candidates than controls.
 
 \required{Broader Impacts}
 % as in the project summary, broader impacts must be called out separately 

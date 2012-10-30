@@ -46,7 +46,7 @@ which suggests structuring around small numbers of highly abundant OTUs and a la
 rare, OTUs.  The current methods used to characterize how communities are structured rely on multivariate statistics, 
 which operate on pair-wise distance matrices.  My analyses demonstrate that use of these methods, by reducing a 
 highly-dimensional dataset (tens of samples, thousands of OTUs), result in a significant loss of information 
-\citep{Friedline:2012fm}. I demonstrate that, in some cases, up to 80\% of the most abundant OTUs may be removed while 
+\citep{Friedline:2012fm}. I demonstrate that, in some cases, up to \SI{80}{\percent} of the most abundant OTUs may be removed while 
 still recovering the same community relationships; this indicates these metrics are biased toward the highly abundant OTUs.  I 
 will demonstrate that the observed patterns of OTU abundance detected from microbial communities can be properly 
 modeled using techniques similar to those we used to model the presence and absence of genes in genome 
@@ -77,7 +77,7 @@ regardless of, publication (e.g., GenBank, Dryad, TreeGenes).
 \subsection*{Data Types}
 
 \paragraph{Genetic}
-Genetic sequence data from Illumina and 454 platforms will be stored as compressed FASTA/FASTQ files 
+Genetic sequence data from the Illumina platform will be stored as compressed FASTA and/or FASTQ files 
 on disk. The quality-filtered, working set of sequence data will be stored in a relational database management system 
 (RDBMS) built on PostgreSQL following an existing Rivera lab data storage model currently in production 
 for the Vaginal Human Microbiome Project. Reads will be tracked through a barcoding system relating 
@@ -88,8 +88,7 @@ dynamic data exploration.
 
 \paragraph{Spatial and phenotypic}
 All metadata will be stored in the same relational database system.  This includes latitude and longitude for all sampling
-locations as well as phenotypic measurements and observations (e.g., percent serotiny, diameter a breast height (DBH), 
-height).
+locations as well as phenotypic measurements and observations (e.g., height, bark thickness, diameter a breast height (DBH)).
 
 \subsection*{Data Standards}
 
@@ -100,13 +99,16 @@ tables available from a web interface.  Downloadable data will be in tab-delimit
 as appropriate.  This format was chosen as it conforms to a standard used in programs such as R, as well as to any 
 current or new custom Java and Python code developed in this project.
 
-\subsection*{Policies for Access and Sharing and Provisions for Appropriate Protection/Privacy}
+\subsection*{Policies for Data Access and Sharing}
 Genomic data will be released following the Bermuda/Ft.\ Lauderdale agreement and will also be deposited in 
 GenBank once data quality is sufficient for release. The remaining data will be released after publication in the 
 text and web formats as described above, along with a copy of the publication, and will be posted on web servers in both
 the Eckert and Rivera laboratories. All relevant code and schemas used to process, store, and analyze these data will 
 be made available under and open source license and distributed via the web (e.g., bitbucket.org).  There will be no 
-charge for these data. There are no known privacy or ethical issues associated with the data collected on this grant. 
+charge for these data. 
+
+\subsection*{Provisions for Appropriate Protection and Privacy}
+There are no known privacy or ethical issues associated with the data collected on this grant. 
 There are no known copyright, licensing, or other intellectual property issues associated with these data.
 
 \subsection*{Policies and Provisions for Re-use and Re-distribution}
@@ -116,7 +118,7 @@ professional and academic) for subsequent meta analysis, statistical model devel
 uses. The PI does not foresee any reason to restrict the re-use of these data to any entity or group.
 
 \subsection*{Plans for Archiving and Preservation of Access}
-Raw DNA template will be stored at VCU in the Eckert Laboratory in 1.5ml Eppendorf tubes at -80 \celsius\ for least as 
+Raw DNA template will be stored at VCU in the Eckert Laboratory in 1.5ml Eppendorf tubes at \SI{-80}{\celsius} for least as 
 long as it takes to publish all the materials associated with this project. Individual primers will not be made available, 
 though published sequences can be used to create them de novo if necessary. Textual genetic data will be made 
 available, via the web or some other publicly available medium as described above, for as long as the PI is 
