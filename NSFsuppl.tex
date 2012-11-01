@@ -52,12 +52,12 @@ will demonstrate that the observed patterns of OTU abundance detected from micro
 modeled using techniques similar to those used to model the presence and absence of genes in genome 
 evolution \citep{Lake:2004cy, Rivera:2004ct}.  Using simulation studies, I demonstrate that general Markov models 
 in a Bayesian inference framework outperform traditional, multivariate ecological methods in recovering true community 
-structure.  Applying this new methodology to Atlantic Ocean microbial communities allowed us to uncover a distance-decay 
-effect, which was not revealed by the traditional methods \citep{Friedline:2012fm}.  Although the ocean dataset operated on a 
-much larger, continental scale, characterization of the sequence data generated from the a nutrient poor soil on Hog Island, 
+structure.  Applying this new methodology to Atlantic Ocean microbial communities uncovered a distance-decay 
+effect which was not revealed by the traditional methods \citep{Friedline:2012fm}.  Although the ocean dataset operated on a 
+much larger, continental scale, characterization of the sequence data generated from the nutrient-poor soil on Hog Island, 
 a barrier island off the Virginia Coast, allows for a better characterization of the processes affecting these communities 
-on a much smaller scale.  Finally, using 16S data from the Vaginal Human 
-Microbiome Project, generated here at VCU under the umbrella of the overall NIH HMP initiative, I show that 
+on a much smaller scale.  Finally, using 16S data from the Human Vaginal Microbiome Project, generated here at 
+VCU under the umbrella of the overall NIH HMP initiative, I show that 
 quality filtering has a profound effect on the reliability of downstream analysis.  In conclusion, 
 my analyses of the metagenomic sequence data from three types of bacterial communities demonstrate that the proper 
 identification of the biological process influencing these communities requires the development and implementation of 
@@ -65,6 +65,7 @@ new statistical and computational methodology that takes advantage of the extens
 high-throughput sequencing. 
 
 \newpage
+\setcounter{page}{1}
 
 \required{Data Management Plan}
 
@@ -80,7 +81,7 @@ regardless of, publication (e.g., GenBank, Dryad, TreeGenes).
 Genetic sequence data from the Illumina platform will be stored as compressed FASTA and/or FASTQ files 
 on disk. The quality-filtered, working set of sequence data will be stored in a relational database management system 
 (RDBMS) built on PostgreSQL following an existing Rivera lab data storage model currently in production 
-for the Vaginal Human Microbiome Project. Reads will be tracked through a barcoding system relating 
+for the Human Vaginal Microbiome Project. Reads will be tracked through a barcoding system relating 
 sequence data uniquely with individuals, populations, and additional metadata, as appropriate (e.g., sampling 
 location, SNP genotypes, annotation, etc.).  A copy of the processed, quality-controlled data will be extracted 
 automatically on a schedule and compressed for distribution via FTP.  Additionally, a web interface will be provided for 
@@ -102,8 +103,8 @@ current or new custom Java and Python code developed in this project.
 \subsection*{Policies for Data Access and Sharing}
 Genomic data will be released following the Bermuda/Ft.\ Lauderdale agreement and will also be deposited in 
 GenBank once data quality is sufficient for release. The remaining data will be released after publication in the 
-text and web formats as described above, along with a copy of the publication, and will be posted on web servers in both
-the Eckert and Rivera laboratories. All relevant code and schemas used to process, store, and analyze these data will 
+text and web formats as described above, along with a copy of the publication, and will be posted on the Eckert laboratory 
+web server. All relevant code and schemas used to process, store, and analyze these data will 
 be made available under and open source license and distributed via the web (e.g., bitbucket.org).  There will be no 
 charge for these data. 
 
